@@ -1,0 +1,29 @@
+Diffie-Hellman Algorithm
+
+This is used to exchange keys between two parties.
+In this case Alice and Bob.
+
+Private:
+	Alice: a
+	Bob: b
+
+Public:
+	p: A prime number (This is the modulus)
+	g: A number which is a coprime of p-1  (This is the base)
+
+	Alice sends Bob:
+		A = (g^a) mod p
+
+	Bob sends Alice:
+		B = (g^b) mod p
+
+
+Now Alice has B and Bob has A when they add their own private values they will get the shared key:
+
+	B^a == A^b
+	
+	or
+
+	(g^a)^b mod p == (g^b)^a mod p
+
+

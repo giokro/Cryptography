@@ -1,0 +1,11 @@
+Tiny Encryption Algorithm is one of the fastest and most efficient cryptographic algorithms ever.
+
+It uses XOR, Addition and bitwise shifts to encrypt data.
+
+It encrypts 64 bits of data at a time with a 128 bit key.
+
+It has a short routine and uses a large number of rounds for security.
+
+In our example we used 32 rounds.
+
+

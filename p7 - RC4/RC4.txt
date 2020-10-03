@@ -1,0 +1,44 @@
+RC4 is a stream cipher, symmetric key algorithm.
+
+Consists of 2 parts:
+	Key scheduling algorithm (KSA):
+		RC4 has an array (size 128, 256) with values 0,1,2...256
+		The KSA uses a secret key to scramble the array:
+		
+		// init:
+			int arr[256];
+			for(int i=0; i<256; i++){
+				arr[i] = i;
+			}
+			
+
+		// scramble:
+			int i = 0;
+			int j = 0;		
+
+			for(int i=0; i<256; i++){
+				j = (j + arr[i] + key[i%key.length()]);
+				swap(arr[i], arr[j]);
+			}
+
+
+	Pseudo-random generation algorithm (PRGA):
+		The PRGA scrambles the array further and generates the key stream which we XOR with the data we want to encrypt:
+	
+			data[2000];	
+			arr[256]; // already jumbled from KSA
+
+			int i = 0;
+			int j = 0;
+
+			for(int i=0; i<data.length(); i++){
+				i = (i + 1) % 256;
+				j = (j + arr[i]) % 256;
+				swap(arr[i], arr[j]);
+
+				temp = (arr[i] + arr[j]) % 256
+				keystream.push_back(arr[temp])
+			}
+
+		// Now we have a key stream we can XOR with our data
+	

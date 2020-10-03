@@ -1,0 +1,17 @@
+Hash - Message Digest Algorithm
+
+One way function; used for password storage, digital signatures and so on.
+
+Salt:
+	Random data added to a plaintext to make a unique hash.
+	For example:
+		There are two passwords in a db that are the same - ("Gela", "Gela").
+		Their hashes will be different because of the salts used.
+		This protects both passwords from being exposed if one is cracked.
+
+		Salts should be kept along with the password hash.
+
+
+Iterations:
+	Basically a hashing algorithm is run many times (n iterations).
+	This makes the computation take longer and, in turn, the password cracking takes longer as well

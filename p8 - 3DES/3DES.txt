@@ -1,0 +1,19 @@
+3DES - Triple Data Encryption Standard
+
+DES is a block cipher, with 64 bit blocks.
+DES was deemed unsafe besause of its small key size (56 bits) and was broken in 1998.
+
+(In the 8 byte key 1 byte is for parity checking)
+
+Triple DES is just DES used 3 times with different keys.
+
+
+Encryption:
+	1) Encrypt data with key1
+	2) Then decrypt with key2
+	3) Then encrypt data with key3
+
+Decryption:
+	1) Decrypt with key3
+	2) Then encrypt with key2
+	3) Then decrypt with key1
